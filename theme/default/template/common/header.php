@@ -41,5 +41,6 @@
 		<li><a href="<?php echo base_url(); ?>"><?php echo $this->lang->line('header_home'); ?></a></li>
 		<li><a href="<?php echo base_url('about'); ?>"><?php echo $this->lang->line('header_about'); ?></a></li>
 	  </ul>
+	  <img src="<?php echo base_url('theme/'.$theme['theme']); ?>/images/logo.png">
 	</nav>
 	
