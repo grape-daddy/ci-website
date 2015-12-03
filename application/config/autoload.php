@@ -52,7 +52,17 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array();
+//$autoload['libraries'] = array();
+
+$d = dir(SYSDIR."/libraries");
+$dh = opendir(SYSDIR."/libraries");
+while (($file = readdir($dh)) !== false){
+	if ($file != 'index.html' && $file != "." && $file != ".." && $file != "Cache" && $file != "Migration.php") {
+		$autoload['libraries'][] = strtolower(str_replace('.php', '', $file));
+	}
+    
+}
+closedir($dh);
 
 
 /*
@@ -64,7 +74,16 @@ $autoload['libraries'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array();
+//$autoload['helper'] = array();
+
+$dh = opendir(SYSDIR."/helpers");
+while (($file = readdir($dh)) !== false){
+	if ($file != 'index.html' && $file != "." && $file != "..") {
+		$autoload['helper'][] = strtolower(str_replace('.php', '', $file));
+	}
+    
+}
+closedir($dh);
 
 
 /*
